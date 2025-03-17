@@ -1,0 +1,30 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = {
+    'Age': [25, 30, 22, 35, 40, 28, 32, 27, 38, 45, 29, 31, 33, 36, 42],
+    'Gender': ['Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male', 'Female', 'Male']
+}
+
+df = pd.DataFrame(data)
+
+# Count the occurrences of each gender
+gender_counts = df['Gender'].value_counts()
+
+# Create the bar chart
+
+plt.figure(figsize=(6, 4))  # Adjust figure size if needed
+plt.bar(gender_counts.index, gender_counts.values)
+plt.xlabel('Gender')
+plt.ylabel('Count')
+plt.title('Distribution of Gender')
+plt.show()
+
+# Create the histogram
+plt.figure(figsize=(8, 5))  # Adjust figure size if needed
+plt.hist(df['Age'], bins=5, edgecolor='black')  # Adjust number of bins as needed
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.title('Distribution of Age')
+plt.show()
